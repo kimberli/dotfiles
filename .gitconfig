@@ -1,0 +1,8 @@
+[core]
+	excludesfile = /Users/kimberli/.gitignore_global
+	editor = vim
+[user]
+	name = kimberli
+	email = kimberlizhong@gmail.com
+[push]
+	default = current

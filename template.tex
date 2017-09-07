@@ -1,0 +1,78 @@
+%----------Kimberli's LaTeX template----------
+
+%--- Preamble ---
+
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{fancyhdr} 
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{parskip}
+\usepackage{hyperref} 
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{xcolor}
+\pgfplotsset{compat=1.12}
+
+\rhead{\creator}
+\lhead{Spring 2017}
+\cfoot{\thepage}
+\addtolength{\headsep}{15pt}
+\pagestyle{fancy}
+\setlength{\headheight}{12pt}
+\titleformat{\subsubsection}[runin]{}{}{}{}[]
+\definecolor{lgray}{gray}{0.95}
+
+\lstset{
+backgroundcolor=\color{lgray},
+aboveskip=3mm,
+belowskip=3mm,
+showstringspaces=false,
+columns=flexible,
+basicstyle={\small\ttfamily},
+numbers=none,
+numberstyle=\tiny\color{gray},
+keywordstyle=\color{blue},
+commentstyle=\color{dkgreen},
+stringstyle=\color{mauve},
+breaklines=true,
+breakatwhitespace=true,
+tabsize=3
+}
+
+
+%--- The Document & Definitions---
+
+\begin{document}
+\newcommand{\class}{Title}
+\newcommand{\duedate}{Date}
+\newcommand{\classsection}{Section}
+\newcommand{\collaboration}{Collaborators}
+\newcommand{\creator}{Kimberli Zhong}
+\newcommand{\problem}[1]{\section*{Problem #1}}
+\newcommand{\ppart}[1]{\subsection*{Part #1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\TODO}{{\color{red} TODO}}
+
+
+%--- Title ---
+
+\begin{center}
+~\\[1cm] 
+{\huge \class} \\[0.4cm] 
+{\large \creator} \\[0.2cm]
+{\large \duedate} \\[0.2cm]
+{\large \classsection} \\[0.2cm]
+{\large \collaboration} 
+\end{center}
+
+%--- Problem 1 ---
+\problem{1}
+\ppart{A}
+
+
+\end{document}
