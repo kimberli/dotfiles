@@ -81,6 +81,7 @@ if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
   export EDITOR='mvim'
+  alias vim='mvim -v'
 fi
 
 # Compilation flags
