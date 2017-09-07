@@ -89,13 +89,17 @@ fi
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# Custom
+
+bindkey -v
+bindkey '^[OA' up-line-or-beginning-search
+bindkey '^[OB' down-line-or-beginning-search
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-
-bindkey -v
 
 alias l="ls -l"
 alias ll="ls -alG"
