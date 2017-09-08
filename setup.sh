@@ -1,6 +1,6 @@
 dir=$(pwd)
 oldfiles=$(pwd)/old
-files=".zshrc .vimrc .gitconfig template.tex"
+files=".zshrc .vimrc .gitconfig template.tex .tmux.conf"
 
 mkdir -p $oldfiles
 
