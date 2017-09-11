@@ -75,6 +75,11 @@ let g:airline_theme='spring_night'
 let g:airline#extensions#tabline#enabled = 1
 
 " mappings
+augroup qf  " skip quickfix windows in :bn and :bp
+    autocmd!
+    autocmd FileType qf set nobuflisted
+augroup END
+
 let mapleader="\,"
 noremap <Up> <NOP>
 noremap <Down> <NOP>
