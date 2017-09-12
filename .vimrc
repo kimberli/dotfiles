@@ -81,6 +81,7 @@ augroup qf  " skip quickfix windows in :bn and :bp
 augroup END
 
 let mapleader="\,"
+map 0 ^
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
