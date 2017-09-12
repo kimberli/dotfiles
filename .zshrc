@@ -100,7 +100,7 @@ fi
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Custom
-
+unsetopt share_history
 bindkey -v
 bindkey '^[OA' up-line-or-beginning-search
 bindkey '^[OB' down-line-or-beginning-search

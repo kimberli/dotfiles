@@ -61,8 +61,8 @@ let g:syntastic_mode_map = {
     \ "active_filetypes": ["python", "javascript", "c", "cpp"],
     \ "passive_filetypes": ["go"] }
 
-let g:pymode_options_max_line_length = 120
-let g:pymode_lint_checkers = ["pyflakes", "pep8"]
+let g:syntastic_javascript_checkers = ["jshint"]
+let g:syntastic_html_checkers = ["jshint", "tidy"]
 let g:ycm_autoclose_preview_window_after_completion=1
 
 " === APPEARANCE ===
@@ -97,6 +97,7 @@ nnoremap <leader>d :bd<cr>
 nnoremap <leader>l :call NumberToggle()<cr>
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
+runtime macros/matchit.vim
 
 " === CUSTOM ===
 filetype plugin on
