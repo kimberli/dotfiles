@@ -86,12 +86,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-  alias vim='mvim -v'
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -126,6 +125,7 @@ alias subl='open -a "Sublime Text"'
 alias atom='open -a "Atom"'
 alias mktex='cp ~/template.tex'
 alias server='python -m SimpleHTTPServer'
+alias vimtex='vim --servername vim'
 
 alias goc='cd ~/Google\ Drive/College/17f/'
 alias go031='cd ~/Documents/031/17f/'

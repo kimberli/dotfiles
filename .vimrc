@@ -23,6 +23,9 @@ Plugin 'scrooloose/nerdtree'
 " go syntax
 Plugin 'fatih/vim-go'
 
+" LaTeX plugin
+Plugin 'lervag/vimtex'
+
 " theme
 Plugin 'rhysd/vim-color-spring-night'
 Plugin 'vim-airline/vim-airline'
@@ -63,7 +66,13 @@ let g:syntastic_mode_map = {
 
 let g:syntastic_javascript_checkers = ["jshint"]
 let g:syntastic_html_checkers = ["jshint", "tidy"]
+
+" YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
+
+" LaTeX vimtex
+" let g:vimtex_compiler_latexmk = {'callback' : 0}
+let g:vimtex_view_method = 'skim'
 
 " === APPEARANCE ===
 if has("termguicolors")
