@@ -125,6 +125,7 @@ alias subl='open -a "Sublime Text"'
 alias atom='open -a "Atom"'
 alias mktex='cp ~/template.tex'
 alias server='python -m SimpleHTTPServer'
+alias vim='vim -X'
 alias vimtex='vim --servername vim'
 
 alias goc='cd ~/Google\ Drive/College/17f/'
