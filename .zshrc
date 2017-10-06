@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -31,6 +32,8 @@ POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='red'
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='089'
 POWERLEVEL9K_HOST_REMOTE_BACKGROUND='blue'
 POWERLEVEL9K_HOST_REMOTE_FOREGROUND='018'
+POWERLEVEL9K_VIRTUALENV_BACKGROUND='140'
+POWERLEVEL9K_RBENV_BACKGROUND='140'
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
