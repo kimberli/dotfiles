@@ -23,6 +23,9 @@ Plugin 'scrooloose/nerdtree'
 " go syntax
 Plugin 'fatih/vim-go'
 
+" dispatch
+Plugin 'tpope/vim-dispatch'
+
 " LaTeX plugin
 Plugin 'lervag/vimtex'
 
@@ -104,6 +107,7 @@ map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>[ :bp<cr>
 nnoremap <leader>] :bn<cr>
 nnoremap <leader>d :bd<cr>
+nnoremap <leader>e :edit 
 nnoremap <leader>l :call NumberToggle()<cr>
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
