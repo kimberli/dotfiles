@@ -106,11 +106,13 @@ nnoremap <C-H> <C-W><C-H>
 map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>[ :bp<cr>
 nnoremap <leader>] :bn<cr>
-nnoremap <leader>d :bd<cr>
+nnoremap <leader>x :bd<cr>
 nnoremap <leader>e :edit 
 nnoremap <leader>l :call NumberToggle()<cr>
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
+nnoremap <leader>m :Make<CR>
+nnoremap <leader>d :Dispatch 
 runtime macros/matchit.vim
 
 " === CUSTOM ===
