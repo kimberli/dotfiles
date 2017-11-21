@@ -113,7 +113,7 @@ bindkey '^[OB' down-line-or-beginning-search
 # For a full list of active aliases, run `alias`.
 #
 
-alias l="ls -l"
+alias l="ls -lh"
 alias ll="ls -alG"
 alias ..='cd ../'
 alias ...='cd ../../'
