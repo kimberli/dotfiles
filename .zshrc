@@ -9,9 +9,9 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 if [[ -n $SSH_CONNECTION ]]; then
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host dir rbenv virtualenv vcs)
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host dir rbenv virtualenv anaconda vcs)
 else
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv virtualenv vcs)
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv virtualenv anaconda vcs)
 fi
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(root_indicator history time)
 
@@ -32,6 +32,7 @@ POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='089'
 POWERLEVEL9K_HOST_REMOTE_BACKGROUND='blue'
 POWERLEVEL9K_HOST_REMOTE_FOREGROUND='018'
 POWERLEVEL9K_VIRTUALENV_BACKGROUND='140'
+POWERLEVEL9K_ANACONDA_BACKGROUND='140'
 POWERLEVEL9K_RBENV_BACKGROUND='140'
 
 # Uncomment the following line to use case-sensitive completion.
