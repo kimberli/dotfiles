@@ -27,7 +27,7 @@ hs.hotkey.bind({'ctrl', 'cmd'}, 'M', baseMove(0, 0, 1, 1))
 --
 hs.hotkey.bind({'ctrl', 'cmd'}, 'S', function () hs.application.launchOrFocus("Slack") end)
 hs.hotkey.bind({'ctrl', 'cmd'}, 'G', function () hs.application.launchOrFocus("Google Chrome") end)
-hs.hotkey.bind({'ctrl', 'cmd'}, 'I', function () hs.application.launchOrFocus("iTerm") end)
+hs.hotkey.bind({'ctrl', 'cmd'}, 'T', function () hs.application.launchOrFocus("iTerm") end)
 
 --
 -- slack menubar item
