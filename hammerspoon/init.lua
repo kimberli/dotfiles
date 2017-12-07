@@ -34,7 +34,6 @@ hs.hotkey.bind({'ctrl', 'cmd'}, 'T', function () hs.application.launchOrFocus("i
 --
 slack = hs.menubar.new()
 paused = false
-logger = hs.logger.new("slack", "debug")
 interval = 15  -- seconds in between polls
 lastRunTime = ""
 
@@ -83,9 +82,7 @@ function getUnreadMsgs()
     channel_x = 1
     function poll_next_channel()
         id = channels[channel_x]["id"]
-        logger.i("id: " .. id)
         url = channelInfoUrl .. "?channel=" .. id
-        logger.i("checking " .. url)
         hs.http.asyncGet(url, {["Authorization"] = "Bearer " .. token }, check_channel)
     end
     function check_channel(resp_code, resp_body, _)
