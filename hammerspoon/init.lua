@@ -39,7 +39,7 @@ paused = false
 interval = 15  -- seconds in between polls
 lastRunTime = ""
 
-channelListUrl = "https://slack.com/api/channels.list"
+channelListUrl = "https://slack.com/api/channels.list?exclude_archived=true"
 channelInfoUrl = "https://slack.com/api/channels.info"
 
 token = "xoxp-your-token-here"
@@ -79,6 +79,8 @@ function setSlackIcon(active, msg)
     end
 end
 
+-- logger = hs.logger.new("slack", "debug")
+
 -- this is ugly but i don't know better lua
 function getUnreadMsgs()
     channel_x = 1
@@ -92,7 +94,11 @@ function getUnreadMsgs()
             setSlackIcon(false, "Failed - " .. resp_code)
             return
         end
-        unreads = hs.json.decode(resp_body)["channel"]["unread_count"]
+        resp = hs.json.decode(resp_body)
+        if resp["latest"] ~= nil then
+            latest_user = resp["latest"]["user"]
+        end
+        unreads = resp["channel"]["unread_count_display"]
         if unreads ~= nil and unreads > 0 then
             setSlackIcon(true, unreads .. " unread message(s)")
             return
