@@ -39,10 +39,11 @@ paused = false
 interval = 15  -- seconds in between polls
 lastRunTime = ""
 
-channelListUrl = "https://slack.com/api/channels.list?exclude_archived=true"
-channelInfoUrl = "https://slack.com/api/channels.info"
-
 token = "xoxp-your-token-here"
+userId = "your-user-id-here"
+
+channelListUrl = "https://slack.com/api/channels.list?token=" .. token .. "&exclude_archived=true"
+channelInfoUrl = "https://slack.com/api/channels.info?token=" .. token
 
 function watchSlack()
     getUnreadMsgs()
@@ -86,7 +87,7 @@ function getUnreadMsgs()
     channel_x = 1
     function poll_next_channel()
         id = channels[channel_x]["id"]
-        url = channelInfoUrl .. "?channel=" .. id
+        url = channelInfoUrl .. "&channel=" .. id
         hs.http.asyncGet(url, {["Authorization"] = "Bearer " .. token }, check_channel)
     end
     function check_channel(resp_code, resp_body, _)
@@ -99,7 +100,7 @@ function getUnreadMsgs()
             latest_user = resp["latest"]["user"]
         end
         unreads = resp["channel"]["unread_count_display"]
-        if unreads ~= nil and unreads > 0 then
+        if unreads ~= nil and unreads > 0 and latest_user ~= userId then
             setSlackIcon(true, unreads .. " unread message(s)")
             return
         else
