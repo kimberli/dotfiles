@@ -88,7 +88,7 @@ function getUnreadMsgs()
     function poll_next_channel()
         id = channels[channel_x]["id"]
         url = channelInfoUrl .. "&channel=" .. id
-        hs.http.asyncGet(url, {["Authorization"] = "Bearer " .. token }, check_channel)
+        hs.http.asyncGet(url, {}, check_channel)
     end
     function check_channel(resp_code, resp_body, _)
         if resp_code ~= 200 then
@@ -124,7 +124,7 @@ function getUnreadMsgs()
             setSlackIcon(false, "Failed - invalid channel list")
         end
     end
-    hs.http.asyncGet(channelListUrl, {["Authorization"] = "Bearer " .. token }, poll_channels)
+    hs.http.asyncGet(channelListUrl, {}, poll_channels)
 end
 
 -- start watching slack
