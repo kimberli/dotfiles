@@ -49,7 +49,7 @@ function watchSlack()
     getUnreadMsgs()
 end
 
-function updateMenu()
+function updateMenu(msg)
     slack:setMenu({
         { title = paused and "Resume" or "Pause", fn = togglePause },
         { title = msg, disabled = true },
@@ -63,13 +63,13 @@ function togglePause()
         watchSlack()
     else
         paused = true
-        updateMenu()
+        updateMenu("Currently paused")
     end
 end
 
 function setSlackIcon(active, msg)
     lastRunTime = os.date("%I:%M:%S %p")
-    updateMenu()
+    updateMenu(msg)
     if active then
         slack:setIcon(hs.image.imageFromPath("~/.hammerspoon/icons/slack_active.png"), false)
     else
@@ -86,31 +86,35 @@ end
 function getUnreadMsgs()
     channel_x = 1
     function poll_next_channel()
+        function check_channel(resp_code, resp_body, _)
+            if resp_code ~= 200 then
+                setSlackIcon(false, "Failed - " .. resp_code)
+                return false
+            end
+            if pcall(function() resp = hs.json.decode(resp_body) end) ~= true then
+                setSlackIcon(false, "Failed - error decoding " .. id)
+                return false
+            end
+
+            if resp["latest"] ~= nil then
+                latest_user = resp["latest"]["user"]
+            end
+            unreads = resp["channel"]["unread_count_display"]
+            if unreads ~= nil and unreads > 0 and latest_user ~= userId then
+                setSlackIcon(true, "At least " .. unreads .. " unread message(s)")
+            else
+                channel_x = channel_x + 1
+                if channel_x <= #channels then
+                    poll_next_channel()
+                else
+                    setSlackIcon(false, "No new messages")
+                end
+            end
+            return true
+        end
         id = channels[channel_x]["id"]
         url = channelInfoUrl .. "&channel=" .. id
-        hs.http.asyncGet(url, {}, check_channel)
-    end
-    function check_channel(resp_code, resp_body, _)
-        if resp_code ~= 200 then
-            setSlackIcon(false, "Failed - " .. resp_code)
-            return
-        end
-        resp = hs.json.decode(resp_body)
-        if resp["latest"] ~= nil then
-            latest_user = resp["latest"]["user"]
-        end
-        unreads = resp["channel"]["unread_count_display"]
-        if unreads ~= nil and unreads > 0 and latest_user ~= userId then
-            setSlackIcon(true, unreads .. " unread message(s)")
-            return
-        else
-            channel_x = channel_x + 1
-            if channel_x <= #channels then
-                poll_next_channel()
-            else
-                setSlackIcon(false, "No new messages")
-            end
-        end
+        hs.http.asyncGet(url, nil, check_channel)
     end
     function poll_channels(resp_code, resp_body, _)
         if resp_code ~= 200 then
@@ -124,7 +128,7 @@ function getUnreadMsgs()
             setSlackIcon(false, "Failed - invalid channel list")
         end
     end
-    hs.http.asyncGet(channelListUrl, {}, poll_channels)
+    hs.http.asyncGet(channelListUrl, nil, poll_channels)
 end
 
 -- start watching slack
