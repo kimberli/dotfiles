@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/python/libexec/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/python/libexec/bin:$HOME/miniconda3/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -89,11 +89,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -127,9 +127,8 @@ alias chrm='open -a "Google Chrome"'
 alias subl='open -a "Sublime Text"'
 alias atom='open -a "Atom"'
 alias mktex='cp ~/template.tex'
+alias pynb='jupyter notebook'
 alias server='python -m SimpleHTTPServer'
-alias vim='vim -X'
-alias vimtex='vim --servername vim'
 
 alias goc='cd ~/Google\ Drive/College/17f/'
 alias go031='cd ~/Documents/031/17f/'
