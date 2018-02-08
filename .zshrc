@@ -120,8 +120,8 @@ alias mktex='cp ~/template.tex'
 alias pynb='jupyter notebook'
 alias server='python -m SimpleHTTPServer'
 
-alias goc='cd ~/Google\ Drive/College/17f/'
-alias go031='cd ~/Documents/031/17f/'
+alias goc='cd ~/Google\ Drive/College/18s/'
+alias gov='cd ~/Documents/diviz/'
 
 alias ga='git add'
 alias gu='git pull'
