@@ -122,3 +122,8 @@ alias gcm='git commit -m'
 alias gk='git checkout'
 alias gr='git rebase'
 alias gri='git rebase -i'
+
+alias tl='tmux ls'
+alias tc='tmux -CC'
+alias ta='tmux -CC attach -t'
+alias tr='tmux rename -t'
