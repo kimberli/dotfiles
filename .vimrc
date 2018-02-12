@@ -71,7 +71,7 @@ let g:syntastic_loc_list_height=3
 
 let g:syntastic_mode_map = {
     \ "mode": "active",
-    \ "active_filetypes": ["python", "javascript", "c", "cpp"],
+    \ "active_filetypes": ["python", "javascript", "c", "cpp", "html"],
     \ "passive_filetypes": ["go"] }
 
 let g:syntastic_javascript_checkers = ["jshint"]
