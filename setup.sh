@@ -9,9 +9,11 @@ echo "moving old files to $oldfiles"
 for file in $files; do
     echo "setting up $file"
     mv ~/$file $oldfiles/ 2>/dev/null
-    ln -s $dir/$file ~/$file
+    ln -sf $dir/$file ~/$file
 done
 
 # setup nvim
 mkdir -p ~/.config/nvim
-ln -s ~/.vimrc ~/.config/nvim/init.vim
+echo "setting up nvim"
+mv ~/.config/nvim/init.vim $oldfiles/ 2>/dev/null
+ln -sf ~/.vimrc ~/.config/nvim/init.vim
