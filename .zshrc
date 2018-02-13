@@ -118,10 +118,11 @@ alias goc='cd ~/Google\ Drive/College/18s/'
 alias gov='cd ~/Documents/diviz/'
 
 alias gl='glol'
+alias gs='git status'
+alias gh='git stash'
 alias gcm='git commit -m'
 alias gk='git checkout'
 alias gr='git rebase'
-alias gri='git rebase -i'
 
 alias tl='tmux ls'
 alias tc='tmux -CC'
