@@ -115,7 +115,7 @@ map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>[ :bp<cr>
 nnoremap <leader>] :bn<cr>
 nnoremap <leader>x :bd<cr>
-nnoremap <leader>e :find
+nnoremap <leader>e :find 
 nnoremap <leader>l :call NumberToggle()<cr>
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
