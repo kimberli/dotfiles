@@ -71,17 +71,17 @@ set statusline+=%*
 
 let g:python_host_prog = '/Users/kimberli/miniconda3/envs/python2/bin/python'
 let g:python3_host_prog = '/Users/kimberli/miniconda3/envs/python3/bin/python'
+
+" Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_loc_list_height=3
-
 let g:syntastic_mode_map = {
     \ "mode": "active",
     \ "active_filetypes": ["python", "javascript", "c", "cpp", "html"],
     \ "passive_filetypes": ["go"] }
-
 let g:syntastic_javascript_checkers = ["jshint"]
 let g:syntastic_html_checkers = ["jshint", "tidy"]
 
@@ -122,8 +122,9 @@ nnoremap <leader>f :find
 nnoremap <leader>l :call NumberToggle()<cr>
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
+nnoremap <leader>d :YcmCompleter GetDoc<CR>
 nnoremap <leader>m :Make<CR>
-nnoremap <leader>d :Dispatch 
+nnoremap <leader>p :Dispatch 
 runtime macros/matchit.vim
 
 " === CUSTOM ===
