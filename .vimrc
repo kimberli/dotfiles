@@ -24,17 +24,23 @@ Plugin 'vim-syntastic/syntastic'
 " YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
 
-" NERDtree
-Plugin 'scrooloose/nerdtree'
+" Surround
+Plugin 'tpope/vim-surround'
 
-" go syntax
-Plugin 'fatih/vim-go'
+" commentary
+Plugin 'tpope/vim-commentary'
+
+" ctrl-p
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " dispatch
 Plugin 'tpope/vim-dispatch'
 
-" LaTeX plugin
-Plugin 'lervag/vimtex'
+" gitgutter
+Plugin 'airblade/vim-gitgutter'
+
+" go syntax
+Plugin 'fatih/vim-go'
 
 " theme
 Plugin 'rhysd/vim-color-spring-night'
@@ -63,6 +69,8 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:python_host_prog = '/Users/kimberli/miniconda3/envs/python2/bin/python'
+let g:python3_host_prog = '/Users/kimberli/miniconda3/envs/python3/bin/python'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -79,10 +87,6 @@ let g:syntastic_html_checkers = ["jshint", "tidy"]
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
-
-" LaTeX vimtex
-" let g:vimtex_compiler_latexmk = {'callback' : 0}
-let g:vimtex_view_method = 'skim'
 
 " === APPEARANCE ===
 if has("termguicolors")
@@ -111,11 +115,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>[ :bp<cr>
 nnoremap <leader>] :bn<cr>
 nnoremap <leader>x :bd<cr>
-nnoremap <leader>e :find 
+nnoremap <leader>f :find 
 nnoremap <leader>l :call NumberToggle()<cr>
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
@@ -208,13 +211,3 @@ function! HasPaste()
      endif
      return ''
 endfunction
-
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF

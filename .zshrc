@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/python/libexec/bin:$HOME/miniconda3/bin:$PATH
+export PATH=/usr/local/opt/python@2/bin:/Users/kimberli/miniconda3/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
