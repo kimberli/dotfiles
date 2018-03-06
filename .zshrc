@@ -124,6 +124,7 @@ alias gh='git stash'
 alias gcm='git commit -m'
 alias gk='git checkout'
 alias gr='git rebase'
+alias gri='git rebase --interactive'
 
 alias tl='tmux ls'
 alias tc='tmux -CC'
