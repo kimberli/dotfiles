@@ -29,7 +29,7 @@ hs.hotkey.bind({'ctrl', 'cmd'}, 'S', function () hs.application.launchOrFocus("S
 hs.hotkey.bind({'ctrl', 'cmd'}, 'G', function () hs.application.launchOrFocus("Google Chrome") end)
 hs.hotkey.bind({'ctrl', 'cmd'}, 'T', function () hs.application.launchOrFocus("iTerm") end)
 hs.hotkey.bind({'ctrl', 'cmd'}, 'E', function () hs.application.launchOrFocus("Wavebox") end)
-hs.hotkey.bind({'ctrl', 'cmd'}, 'F', function () hs.application.launchOrFocus("Messenger for Desktop") end)
+hs.hotkey.bind({'ctrl', 'cmd'}, 'F', function () hs.application.launchOrFocus("Caprine") end)
 
 --
 -- slack menubar item
