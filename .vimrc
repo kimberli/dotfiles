@@ -84,6 +84,7 @@ let g:syntastic_mode_map = {
     \ "passive_filetypes": ["go"] }
 let g:syntastic_javascript_checkers = ["jshint"]
 let g:syntastic_html_checkers = ["jshint", "tidy"]
+let g:syntastic_cpp_compiler_options = "-std=gnu++11"
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -115,6 +116,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
 nnoremap <leader>[ :bp<cr>
 nnoremap <leader>] :bn<cr>
 nnoremap <leader>x :bd<cr>
@@ -123,7 +126,7 @@ nnoremap <leader>l :call NumberToggle()<cr>
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 nnoremap <leader>d :YcmCompleter GetDoc<CR>
-nnoremap <leader>m :Make<CR>
+nnoremap <leader>m :w<CR>:Make<CR>
 nnoremap <leader>p :Dispatch 
 runtime macros/matchit.vim
 
