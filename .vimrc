@@ -116,13 +116,13 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-nmap <S-Enter> O<Esc>
-nmap <CR> o<Esc>
+vnoremap // y/<C-R>"<CR>
+
 nnoremap <leader>[ :bp<cr>
 nnoremap <leader>] :bn<cr>
 nnoremap <leader>x :bd<cr>
 nnoremap <leader>f :find 
-nnoremap <leader>l :call NumberToggle()<cr>
+nnoremap <leader>l :call NumberToggle()<CR>
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 nnoremap <leader>d :YcmCompleter GetDoc<CR>
