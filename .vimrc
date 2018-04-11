@@ -84,7 +84,7 @@ let g:syntastic_mode_map = {
     \ "passive_filetypes": ["go"] }
 let g:syntastic_javascript_checkers = ["jshint"]
 let g:syntastic_html_checkers = ["jshint", "tidy"]
-let g:syntastic_cpp_compiler_options = "-std=gnu++11"
+let g:syntastic_cpp_compiler_options = "-std=gnu++11 -std=gnu++1y"
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -190,9 +190,13 @@ set splitright
 function! NumberToggle()
   if(&relativenumber == 1)
     set nornu
-    set number
+    set nonumber
+	:GitGutterDisable
+    :SyntasticReset
   else
     set rnu
+    set number
+    :GitGutterEnable
   endif
 endfunc
 
