@@ -112,7 +112,7 @@ alias subl='open -a "Sublime Text"'
 alias atom='open -a "Atom"'
 alias mktex='cp ~/template.tex'
 alias pynb='jupyter notebook'
-alias server='python -m SimpleHTTPServer'
+alias server='python -m http.server'
 
 alias goc='cd ~/Google\ Drive/College/18s/'
 alias gov='cd ~/Documents/diviz/'
