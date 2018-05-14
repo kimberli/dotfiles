@@ -121,7 +121,9 @@ vnoremap // y/<C-R>"<CR>
 nnoremap <leader>[ :bp<cr>
 nnoremap <leader>] :bn<cr>
 nnoremap <leader>x :bd<cr>
-nnoremap <leader>f :find 
+nnoremap <leader>e :edit  
+nnoremap <leader>j :lnext<cr>
+nnoremap <leader>k :lprev<cr>
 nnoremap <leader>l :call NumberToggle()<CR>
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
