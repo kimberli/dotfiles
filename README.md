@@ -10,6 +10,9 @@ Set up by cloning this repo then running `setup.sh` (make sure to do this from w
 
 Colors are:
 
+* foreground - `#fffeeb`
+* background - `#132132`
+* black - `#3c3c3c`
 * red - `#fd8489`
 * green - `#a9dd9d`
 * yellow - `#fedf81`
