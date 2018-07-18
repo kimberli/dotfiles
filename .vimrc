@@ -86,6 +86,9 @@ let g:syntastic_javascript_checkers = ["jshint"]
 let g:syntastic_html_checkers = ["jshint", "tidy"]
 let g:syntastic_cpp_compiler_options = "-std=gnu++11 -std=gnu++1y"
 
+" Ctrl-P
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
 
