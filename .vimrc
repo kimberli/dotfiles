@@ -27,6 +27,9 @@ Plugin 'Valloric/YouCompleteMe'
 " Surround
 Plugin 'tpope/vim-surround'
 
+" Smartab
+Plugin 'ervandew/supertab'
+
 " commentary
 Plugin 'tpope/vim-commentary'
 
@@ -108,6 +111,8 @@ augroup qf  " skip quickfix windows in :bn and :bp
 augroup END
 
 let mapleader="\,"
+inoremap <C-c> <Esc>
+vnoremap <C-c> <Esc>
 noremap 0 ^
 noremap ^ 0
 noremap <Up> <NOP>
@@ -121,12 +126,12 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 vnoremap // y/<C-R>"<CR>
 
-nnoremap <leader>[ :bp<cr>
-nnoremap <leader>] :bn<cr>
-nnoremap <leader>x :bd<cr>
+nnoremap <leader>[ :bp<CR>
+nnoremap <leader>] :bn<CR>
+nnoremap <leader>x :bd<CR>
 nnoremap <leader>e :edit  
-nnoremap <leader>j :lnext<cr>
-nnoremap <leader>k :lprev<cr>
+nnoremap <leader>j :lnext<CR>
+nnoremap <leader>k :lprev<CR>
 nnoremap <leader>l :call NumberToggle()<CR>
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
