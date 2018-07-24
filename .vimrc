@@ -21,9 +21,6 @@ Plugin 'VundleVim/Vundle.vim'
 " Syntastic
 Plugin 'vim-syntastic/syntastic'
 
-" YouCompleteMe
-Plugin 'Valloric/YouCompleteMe'
-
 " Surround
 Plugin 'tpope/vim-surround'
 
