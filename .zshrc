@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=/usr/local/opt/python@2/bin:/Users/kimberli/miniconda3/bin:$PATH
+export PATH=/usr/local/opt/python/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -113,9 +113,6 @@ alias atom='open -a "Atom"'
 alias mktex='cp ~/template.tex'
 alias pynb='jupyter notebook'
 alias server='python -m http.server'
-
-alias goc='cd ~/Google\ Drive/College/18s/'
-alias gov='cd ~/Documents/diviz/'
 
 alias gl='glol'
 alias gpt='git push --tags'
