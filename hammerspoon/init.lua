@@ -101,7 +101,8 @@ function getUnreadMsgs()
             end
             unreads = resp["channel"]["unread_count_display"]
             if unreads ~= nil and unreads > 0 and latest_user ~= userId then
-                setSlackIcon(true, "At least " .. unreads .. " unread message(s)")
+                name = resp["channel"]["name"]
+                setSlackIcon(true, "At least " .. unreads .. " unread message(s) in #" .. name)
             else
                 channel_x = channel_x + 1
                 if channel_x <= #channels then
