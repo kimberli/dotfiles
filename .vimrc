@@ -39,6 +39,9 @@ Plugin 'tpope/vim-dispatch'
 " gitgutter
 Plugin 'airblade/vim-gitgutter'
 
+" vim-wordmotion
+Plugin 'chaoren/vim-wordmotion'
+
 " go syntax
 Plugin 'fatih/vim-go'
 
