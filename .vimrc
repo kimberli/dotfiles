@@ -24,7 +24,7 @@ Plugin 'vim-syntastic/syntastic'
 " Surround
 Plugin 'tpope/vim-surround'
 
-" Smartab
+" tab autocomplete
 Plugin 'ervandew/supertab'
 
 " commentary
@@ -41,6 +41,9 @@ Plugin 'airblade/vim-gitgutter'
 
 " vim-wordmotion
 Plugin 'chaoren/vim-wordmotion'
+
+" smarter tabs
+Plugin 'tpope/vim-sleuth'
 
 " go syntax
 Plugin 'fatih/vim-go'
@@ -177,11 +180,6 @@ set nobackup " backups
 set nowb
 set noswapfile
 set noerrorbells
-
-set expandtab " tabs
-set smarttab
-set shiftwidth=4
-set tabstop=4
 
 set lbr " line breaks
 set tw=500
