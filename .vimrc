@@ -88,7 +88,7 @@ let g:syntastic_mode_map = {
     \ "mode": "active",
     \ "active_filetypes": ["python", "javascript", "c", "cpp", "html"],
     \ "passive_filetypes": ["go"] }
-let g:syntastic_javascript_checkers = ["jshint"]
+let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_html_checkers = ["jshint", "tidy"]
 let g:syntastic_cpp_compiler_options = "-std=gnu++11 -std=gnu++1y"
 
@@ -141,7 +141,9 @@ nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 nnoremap <leader>d :YcmCompleter GetDoc<CR>
 nnoremap <leader>m :w<CR>:Make<CR>
 nnoremap <leader>p :Dispatch 
+nnoremap <C-g> [{
 runtime macros/matchit.vim
+
 
 " === CUSTOM ===
 filetype plugin on
