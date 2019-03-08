@@ -88,6 +88,9 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
+
 # Custom
 unsetopt share_history
 bindkey -v

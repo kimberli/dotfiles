@@ -30,9 +30,6 @@ Plugin 'ervandew/supertab'
 " commentary
 Plugin 'tpope/vim-commentary'
 
-" ctrl-p
-Plugin 'ctrlpvim/ctrlp.vim'
-
 " dispatch
 Plugin 'tpope/vim-dispatch'
 
@@ -44,6 +41,10 @@ Plugin 'chaoren/vim-wordmotion'
 
 " smarter tabs
 Plugin 'tpope/vim-sleuth'
+
+" fzf
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 " go syntax
 Plugin 'fatih/vim-go'
@@ -92,8 +93,20 @@ let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_html_checkers = ["jshint", "tidy"]
 let g:syntastic_cpp_compiler_options = "-std=gnu++11 -std=gnu++1y"
 
-" Ctrl-P
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Constant'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'Normal', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Constant'],
+  \ 'info':    ['fg', 'Special'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -118,10 +131,7 @@ inoremap <C-c> <Esc>
 vnoremap <C-c> <Esc>
 noremap 0 ^
 noremap ^ 0
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+noremap <C-P> :FZF<CR>
 nnoremap ; :
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
