@@ -18,8 +18,11 @@ call vundle#rc(s:editor_root . '/bundle')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" Syntastic
-Plugin 'vim-syntastic/syntastic'
+" " Syntastic
+" Plugin 'vim-syntastic/syntastic'
+
+" ALE
+Plugin 'w0rp/ale'
 
 " Surround
 Plugin 'tpope/vim-surround'
@@ -73,7 +76,6 @@ filetype plugin indent on    " required
 
 " === SYNTAX OPTIONS ===
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:python_host_prog = '/Users/kimberli/miniconda3/envs/python2/bin/python'
@@ -93,12 +95,30 @@ let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_html_checkers = ["jshint", "tidy"]
 let g:syntastic_cpp_compiler_options = "-std=gnu++11 -std=gnu++1y"
 
+" ALE
+let g:ale_javascript_eslint_use_global = 1
+let g:ale_javascript_eslint_executable = 'eslint_d'
+let b:ale_fixers = {'javascript': ['eslint']}
+let g:ale_fix_on_save = 1
+let g:ale_open_list = 1
+let g:ale_lint_on_enter = 1
+let g:ale_keep_list_window_open = 0
+let g:ale_list_window_size = 5
+let g:ale_sign_error = '>'
+let g:ale_sign_warning = '-'
+
+augroup FiletypeGroup
+    autocmd!
+    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
+
+" FZF
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Constant'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'Normal', 'CursorColumn'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'CursorLine'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
   \ 'hl+':     ['fg', 'Constant'],
   \ 'info':    ['fg', 'Special'],
   \ 'border':  ['fg', 'Ignore'],
@@ -107,6 +127,12 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+augroup fzf
+  autocmd!
+  autocmd! FileType fzf
+  autocmd  FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+augroup END
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -119,6 +145,7 @@ set background=dark
 colorscheme spring-night
 let g:airline_theme='spring_night'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 
 " mappings
 augroup qf  " skip quickfix windows in :bn and :bp
@@ -131,7 +158,8 @@ inoremap <C-c> <Esc>
 vnoremap <C-c> <Esc>
 noremap 0 ^
 noremap ^ 0
-noremap <C-P> :FZF<CR>
+noremap <C-P> :GFiles<CR>
+noremap <C-N> :Lines<CR>
 nnoremap ; :
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -212,7 +240,6 @@ function! NumberToggle()
     set nornu
     set nonumber
 	:GitGutterDisable
-    :SyntasticReset
   else
     set rnu
     set number
