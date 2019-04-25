@@ -4,6 +4,13 @@ export PATH=/usr/local/Cellar:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+export LANG="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+
+RED='\033[0;31m'
+YELLOW='\e[33m'
+NO_COLOR='\033[0m'
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -146,3 +153,7 @@ alias dk='docker kill'
 alias drm='docker rm -f'
 alias di='docker images'
 alias drmi='docker rmi'
+
+function error() {
+  (>&2 echo -e "${RED}$*${NO_COLOR}")
+}

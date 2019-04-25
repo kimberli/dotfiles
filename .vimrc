@@ -99,8 +99,19 @@ let g:syntastic_cpp_compiler_options = "-std=gnu++11 -std=gnu++1y"
 let g:ale_javascript_eslint_use_global = 1
 let g:ale_javascript_eslint_executable = 'eslint_d'
 let g:ale_c_clangformat_options = '--style=Google'
-let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint'], 'javascript.jsx': ['eslint'], 'cpp': ['cpplint']}
-let g:ale_fixers = {'javascript': ['eslint'], 'typescript': ['eslint'], 'javascript.jsx': ['eslint'], 'cpp': ['clang-format'], 'python': ['yapf']}
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'typescript': ['eslint'],
+\   'javascript.jsx': ['eslint'],
+\   'cpp': ['cpplint'],
+\   'python': ['pylint'],
+\ }
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\   'typescript': ['eslint'],
+\   'javascript.jsx': ['eslint'],
+\   'cpp': ['clang-format'],
+\ }
 let g:ale_fix_on_save = 1
 let g:ale_open_list = 1
 let g:ale_lint_on_enter = 1
@@ -163,6 +174,8 @@ noremap 0 ^
 noremap ^ 0
 noremap <C-P> :GFiles<CR>
 noremap <C-N> :Lines<CR>
+noremap <silent> <leader>j :ALENext<cr>
+noremap <silent> <leader>k :ALEPrevious<cr>
 nnoremap ; :
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
