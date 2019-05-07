@@ -42,6 +42,9 @@ Plugin 'airblade/vim-gitgutter'
 " vim-wordmotion
 Plugin 'chaoren/vim-wordmotion'
 
+" vim-terraform
+Plugin 'hashivim/vim-terraform'
+
 " smarter tabs
 Plugin 'tpope/vim-sleuth'
 
@@ -80,6 +83,10 @@ set statusline+=%*
 
 let g:python_host_prog = '/Users/kimberli/miniconda3/envs/python2/bin/python'
 let g:python3_host_prog = '/Users/kimberli/miniconda3/envs/python3/bin/python'
+
+" vim-terraform
+let g:terraform_align = 1
+let g:terraform_fmt_on_save=1
 
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
