@@ -11,39 +11,10 @@ RED='\033[0;31m'
 YELLOW='\e[33m'
 NO_COLOR='\033[0m'
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
-if [[ -n $SSH_CONNECTION ]]; then
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host dir rbenv virtualenv anaconda vcs)
-else
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv virtualenv anaconda vcs)
-fi
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(root_indicator status history time)
-
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_SHORTEN_DELIMITER=""
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
-POWERLEVEL9K_HIDE_BRANCH_ICON=true
-POWERLEVEL9K_VCS_HIDE_TAGS=true
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_SSH_ICON=""
-POWERLEVEL9K_STATUS_CROSS=true
-
-POWERLEVEL9K_DIR_HOME_BACKGROUND='red'
-POWERLEVEL9K_DIR_HOME_FOREGROUND='089'
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='red'
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='089'
-POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='red'
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='089'
-POWERLEVEL9K_HOST_REMOTE_BACKGROUND='blue'
-POWERLEVEL9K_HOST_REMOTE_FOREGROUND='018'
-POWERLEVEL9K_HOST_LOCAL_BACKGROUND='blue'
-POWERLEVEL9K_HOST_LOCAL_FOREGROUND='018'
-POWERLEVEL9K_VIRTUALENV_BACKGROUND='140'
-POWERLEVEL9K_ANACONDA_BACKGROUND='140'
-POWERLEVEL9K_RBENV_BACKGROUND='140'
+# This way the completion script does not have to parse Bazel's options
+# repeatedly.  The directory in cache-path must be created manually.
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -79,6 +50,40 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='red'
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='089'
+if [[ -n $SSH_CONNECTION ]]; then
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host dir rbenv virtualenv anaconda vcs)
+else
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv virtualenv anaconda vcs)
+fi
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(root_indicator status history time)
+
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_SHORTEN_DELIMITER=""
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+POWERLEVEL9K_HIDE_BRANCH_ICON=true
+POWERLEVEL9K_VCS_HIDE_TAGS=true
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_SSH_ICON=""
+POWERLEVEL9K_STATUS_CROSS=true
+
+POWERLEVEL9K_DIR_HOME_BACKGROUND='red'
+POWERLEVEL9K_DIR_HOME_FOREGROUND='089'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='red'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='089'
+POWERLEVEL9K_HOST_REMOTE_BACKGROUND='blue'
+POWERLEVEL9K_HOST_REMOTE_FOREGROUND='018'
+POWERLEVEL9K_HOST_LOCAL_BACKGROUND='blue'
+POWERLEVEL9K_HOST_LOCAL_FOREGROUND='018'
+POWERLEVEL9K_VIRTUALENV_BACKGROUND='140'
+POWERLEVEL9K_ANACONDA_BACKGROUND='140'
+POWERLEVEL9K_RBENV_BACKGROUND='140'
 
 source $ZSH/oh-my-zsh.sh
 
