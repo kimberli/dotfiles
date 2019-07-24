@@ -203,6 +203,12 @@ nnoremap <leader>d :YcmCompleter GetDoc<CR>
 nnoremap <leader>m :w<CR>:Make<CR>
 nnoremap <leader>p :Dispatch 
 nnoremap <C-g> [{
+
+" insert mode mappings
+" Just smash j + k to escape
+inoremap jk <esc>l
+inoremap kj <esc>l
+
 runtime macros/matchit.vim
 
 
