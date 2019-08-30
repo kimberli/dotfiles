@@ -209,6 +209,12 @@ nnoremap <C-g> [{
 inoremap jk <esc>l
 inoremap kj <esc>l
 
+" up/down to same indentation
+nnoremap K :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
+nnoremap J :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
+vnoremap K mt:call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>my`tv`y
+vnoremap J mt:call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>my`tv`y
+
 runtime macros/matchit.vim
 
 
