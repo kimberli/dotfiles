@@ -121,6 +121,11 @@ else
   export EDITOR='vim'
 fi
 
+function rgs() {
+  rg -S --pretty -C 2 $@ | less
+}
+alias rgl="rg -l"
+
 alias l="ls -lh"
 alias ll="ls -alG"
 
@@ -133,8 +138,6 @@ alias server='python -m http.server'
 
 alias gds='git diff --staged'
 alias gl='glol'
-alias gg='git grep -pnI --break'
-alias ggi='git grep -ipnI --break'
 alias gpt='git push --tags'
 alias gu='git pull --rebase'
 alias gs='git status'
