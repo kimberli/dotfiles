@@ -192,7 +192,7 @@ vnoremap // y/<C-R>"<CR>
 
 nnoremap <leader>[ :bp<CR>
 nnoremap <leader>] :bn<CR>
-nnoremap <leader>x :bd<CR>
+nnoremap <leader>x :bp\|bd #<CR>
 nnoremap <leader>e :edit  
 nnoremap <leader>j :lnext<CR>
 nnoremap <leader>k :lprev<CR>

@@ -124,7 +124,7 @@ fi
 function rgs() {
   rg -S --pretty -C 2 $@ | less
 }
-alias rgl="rg -l"
+alias rgl="rg -lS"
 
 alias l="ls -lh"
 alias ll="ls -alG"
@@ -154,7 +154,6 @@ alias gta='git tag -a'
 alias tl='tmux ls'
 alias tc='tmux -CC'
 alias ta='tmux -CC attach -t'
-alias tr='tmux rename -t'
 
 alias dps='docker ps -a'
 alias dk='docker kill'
