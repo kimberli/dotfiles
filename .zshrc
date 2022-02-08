@@ -137,6 +137,7 @@ alias pynb='jupyter notebook'
 alias server='python -m http.server'
 
 alias gds='git diff --staged'
+alias gdu='git diff --name-only --diff-filter=U'
 alias gl='glol'
 alias gpt='git push --tags'
 alias gpf='git push --force-with-lease'
