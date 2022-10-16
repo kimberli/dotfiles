@@ -4,6 +4,7 @@
 	name = kimberli
 	email = kimberlizhong@gmail.com
 [push]
+	autoSetupRemote = true
 	default = current
 [pull]
 	rebase = true
