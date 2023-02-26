@@ -18,14 +18,14 @@ call vundle#rc(s:editor_root . '/bundle')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" " Syntastic
-" Plugin 'vim-syntastic/syntastic'
-
 " ALE
 Plugin 'w0rp/ale'
 
 " Surround
 Plugin 'tpope/vim-surround'
+
+" Codeium
+Plugin 'Exafunction/codeium.vim'
 
 " tab autocomplete
 Plugin 'ervandew/supertab'
@@ -38,6 +38,10 @@ Plugin 'tpope/vim-dispatch'
 
 " gitgutter
 Plugin 'airblade/vim-gitgutter'
+
+" typescript-vim
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
 
 " vim-wordmotion
 Plugin 'chaoren/vim-wordmotion'
@@ -88,35 +92,24 @@ let g:python3_host_prog = '/Users/kimberli/miniconda3/envs/python3/bin/python'
 let g:terraform_align = 1
 let g:terraform_fmt_on_save=1
 
-" Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_loc_list_height=3
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "active_filetypes": ["python", "javascript", "c", "cpp", "html"],
-    \ "passive_filetypes": ["go"] }
-let g:syntastic_javascript_checkers = ["eslint"]
-let g:syntastic_html_checkers = ["jshint", "tidy"]
-let g:syntastic_cpp_compiler_options = "-std=gnu++11 -std=gnu++1y"
-
 " ALE
 let g:ale_javascript_eslint_use_global = 1
 let g:ale_javascript_eslint_executable = 'eslint_d'
+let g:ale_python_black_executable='black'
 let g:ale_c_clangformat_options = '--style=Google'
 let g:ale_linters = {
+\   'typescript.tsx': ['eslint'],
+\   'typescriptreact': ['eslint'],
 \   'javascript': ['eslint'],
 \   'typescript': ['eslint'],
-\   'javascript.jsx': ['eslint'],
 \   'cpp': ['cpplint'],
 \   'python': ['pylint'],
 \ }
 let g:ale_fixers = {
+\   'typescript.tsx': ['eslint'],
+\   'typescriptreact': ['eslint'],
 \   'javascript': ['eslint'],
 \   'typescript': ['eslint'],
-\   'javascript.jsx': ['eslint'],
 \   'cpp': ['clang-format'],
 \ }
 let g:ale_fix_on_save = 1
@@ -129,7 +122,7 @@ let g:ale_sign_warning = '-'
 
 augroup FiletypeGroup
     autocmd!
-    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+    au BufNewFile,BufRead *.tsx set filetype=typescript.tsx syntax=typescriptreact
     autocmd QuitPre * if empty(&bt) | lclose | endif
 augroup END
 
