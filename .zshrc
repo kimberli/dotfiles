@@ -154,8 +154,8 @@ alias gts='git tag -l'
 alias gta='git tag -a'
 
 alias tl='tmux ls'
-alias tc='tmux -CC'
-alias ta='tmux -CC attach -t'
+alias tc='tmux'
+alias ta='tmux attach -t'
 
 alias dps='docker ps -a'
 alias dk='docker kill'
