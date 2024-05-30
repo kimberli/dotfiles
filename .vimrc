@@ -19,7 +19,7 @@ call vundle#rc(s:editor_root . '/bundle')
 Plugin 'VundleVim/Vundle.vim'
 
 " ALE
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 
 " Surround
 Plugin 'tpope/vim-surround'
