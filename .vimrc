@@ -27,9 +27,6 @@ Plugin 'tpope/vim-surround'
 " Codeium
 Plugin 'Exafunction/codeium.vim'
 
-" tab autocomplete
-Plugin 'ervandew/supertab'
-
 " commentary
 Plugin 'tpope/vim-commentary'
 
@@ -38,6 +35,9 @@ Plugin 'tpope/vim-dispatch'
 
 " gitgutter
 Plugin 'airblade/vim-gitgutter'
+
+" Git commands
+Plugin 'tpope/vim-fugitive'
 
 " typescript-vim
 Plugin 'leafgarland/typescript-vim'
@@ -95,6 +95,8 @@ let g:terraform_fmt_on_save=1
 " ALE
 let g:ale_javascript_eslint_use_global = 1
 let g:ale_javascript_eslint_executable = 'eslint_d'
+let g:ale_typescript_eslint_use_global = 1
+let g:ale_typescript_eslint_executable = 'eslint_d'
 let g:ale_python_black_executable='black'
 let g:ale_c_clangformat_options = '--style=Google'
 let g:ale_linters = {
@@ -195,6 +197,10 @@ nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 nnoremap <leader>d :YcmCompleter GetDoc<CR>
 nnoremap <leader>m :w<CR>:Make<CR>
 nnoremap <leader>p :Dispatch 
+nnoremap <leader>b :Git blame<CR>
+nnoremap <leader>- <C-W>s
+nnoremap <leader>\ <C-W>v
+nnoremap <leader>c <C-W>c
 nnoremap <C-g> [{
 
 " insert mode mappings
