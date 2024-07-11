@@ -177,6 +177,10 @@ alias drm='docker rm -f'
 alias di='docker images'
 alias drmi='docker rmi'
 
+alias vpnup='sudo wg-quick up kim-mac'
+alias vpndown='sudo wg-quick down kim-mac'
+alias refreshdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
+
 function cdr() {
   root=$(git rev-parse --show-toplevel 2>/dev/null)
   if [ -n "$root" ]; then
@@ -189,3 +193,14 @@ function cdr() {
 function error() {
   (>&2 echo -e "${RED}$*${NO_COLOR}")
 }
+
+# pnpm
+export PNPM_HOME="/Users/kim/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# Created by `pipx` on 2024-07-15 01:46:25
+export PATH="$PATH:/Users/kim/.local/bin"
