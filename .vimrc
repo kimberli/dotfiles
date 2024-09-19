@@ -194,6 +194,7 @@ vnoremap // y/<C-R>"<CR>
 
 nnoremap <C-[> :bp<CR>
 nnoremap <C-]> :bn<CR>
+nnoremap <C-w> :bp\|bd #<CR>
 nnoremap <leader>[ :bp<CR>
 nnoremap <leader>] :bn<CR>
 nnoremap <leader>x :bp\|bd #<CR>
