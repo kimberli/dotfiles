@@ -93,6 +93,12 @@ let g:terraform_align = 1
 let g:terraform_fmt_on_save=1
 
 " ALE
+if exists('$VSCODE')
+    let g:ale_disable_linting = 1
+else
+    let g:ale_disable_linting = 0
+endif
+
 let g:ale_javascript_eslint_use_global = 1
 let g:ale_javascript_eslint_executable = 'eslint_d'
 let g:ale_typescript_eslint_use_global = 1
@@ -179,12 +185,15 @@ noremap <C-N> :Lines<CR>
 noremap <silent> <leader>j :ALENext<cr>
 noremap <silent> <leader>k :ALEPrevious<cr>
 nnoremap ; :
+nnoremap <C-S> :w<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 vnoremap // y/<C-R>"<CR>
 
+nnoremap <C-[> :bp<CR>
+nnoremap <C-]> :bn<CR>
 nnoremap <leader>[ :bp<CR>
 nnoremap <leader>] :bn<CR>
 nnoremap <leader>x :bp\|bd #<CR>
