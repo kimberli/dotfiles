@@ -4,6 +4,14 @@ else
     let s:editor_root=expand("~/.vim")
 endif
 
+if exists('g:vscode')
+    let g:ale_enabled = 0
+    let g:codeium_enabled = v:false
+else
+    let g:ale_enabled = 1
+endif
+
+
 " ===== BEGIN VUNDLE =====
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -93,12 +101,6 @@ let g:terraform_align = 1
 let g:terraform_fmt_on_save=1
 
 " ALE
-if exists('$VSCODE')
-    let g:ale_disable_linting = 1
-else
-    let g:ale_disable_linting = 0
-endif
-
 let g:ale_javascript_eslint_use_global = 1
 let g:ale_javascript_eslint_executable = 'eslint_d'
 let g:ale_typescript_eslint_use_global = 1
