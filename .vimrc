@@ -68,7 +68,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'fatih/vim-go'
 
 " theme
-Plugin 'rhysd/vim-color-spring-night'
+Plugin 'sainnhe/everforest'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -166,8 +166,8 @@ if has("termguicolors")
     set termguicolors
 endif
 set background=dark
-colorscheme spring-night
-let g:airline_theme='spring_night'
+colorscheme everforest
+let g:airline_theme='everforest'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 
