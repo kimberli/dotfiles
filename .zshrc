@@ -177,6 +177,15 @@ alias drm='docker rm -f'
 alias di='docker images'
 alias drmi='docker rmi'
 
+function cdr() {
+  root=$(git rev-parse --show-toplevel 2>/dev/null)
+  if [ -n "$root" ]; then
+    cd "$root"
+  else
+    echo "Not in a Git repository."
+  fi
+}
+
 function error() {
   (>&2 echo -e "${RED}$*${NO_COLOR}")
 }
