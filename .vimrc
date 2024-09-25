@@ -186,6 +186,7 @@ noremap <C-P> :GFiles<CR>
 noremap <C-N> :Lines<CR>
 noremap <silent> <leader>j :ALENext<cr>
 noremap <silent> <leader>k :ALEPrevious<cr>
+nnoremap U :redo<CR>
 nnoremap ; :
 nnoremap <C-S> :w<CR>
 nnoremap <C-J> <C-W><C-J>
