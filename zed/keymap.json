@@ -1,0 +1,267 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "Workspace || Editor",
+    "bindings": {
+      "ctrl-p": [
+        "file_finder::Toggle",
+        {}
+      ]
+    }
+  },
+  {
+    "context": "((FileFinder || FileFinder > Picker > Editor) || FileFinder > Picker > menu)",
+    "bindings": {
+      "ctrl-shift-p": "file_finder::SelectPrevious"
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "0": ["vim::FirstNonWhitespace", {}],
+      "^": ["vim::StartOfLine", {}]
+    }
+  },
+  {
+    "context": "Workspace || Editor",
+    "bindings": {
+      "ctrl-]": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "Workspace || Editor",
+    "bindings": {
+      "ctrl-[": "pane::ActivatePreviousItem"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-s": [
+        "workspace::Save",
+        {}
+      ]
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "shift-j": "vim::NextSameIndent"
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "shift-k": "vim::PreviousSameIndent"
+    }
+  },
+  {
+    "context": "(vim_mode == normal && !menu)",
+      "bindings": {
+      "e": [
+        "vim::NextSubwordEnd",
+        {}
+      ]
+    }
+  },
+  {
+    "context": "(vim_mode == normal && !menu)",
+      "bindings": {
+      "w": [
+        "vim::NextSubwordStart",
+        {}
+      ]
+    }
+  },
+  {
+    "context": "(vim_mode == normal && !menu)",
+    "bindings": {
+      "b": "editor::MoveToPreviousSubwordStart"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-m": "workspace::ToggleZoom"
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "ctrl-,": "editor::Hover"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-shift-t": "workspace::NewTerminal"
+    }
+  },
+  {
+    "context": "PromptLibrary",
+    "bindings": {
+      "ctrl-w": "workspace::CloseWindow"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-w": "workspace::CloseActiveDock"
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "ctrl-u": null
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "ctrl-d": "editor::GoToDefinitionSplit"
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "ctrl-y": "editor::GoToTypeDefinitionSplit"
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "ctrl-r": null
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "ctrl-r": "editor::FindAllReferences"
+    }
+  },
+  {
+    "context": "(vim_mode == helix_normal && !menu)",
+    "bindings": {
+      "g r": null
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "g r": "editor::FindAllReferences"
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "ctrl-e": "editor::GoToDiagnostic"
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "ctrl-f": "pane::DeploySearch"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-/": "agent::ToggleFocus"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-\\": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-k": null
+    }
+  },
+  {
+    "context": "Picker > Editor",
+    "bindings": {
+      "d b": "editor::DeleteToPreviousWordStart"
+    }
+  },
+  {
+    "context": "(AgentPanel && external_agent_thread)",
+    "bindings": {
+      "ctrl-shift-?": "agent::NewExternalAgentThread"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-t": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-t": "pane::ReopenClosedItem"
+    }
+  },
+  {
+    "context": "(ProjectPanel && not_editing)",
+    "bindings": {
+      "f": "project_panel::NewFile"
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "ctrl-h": "agent::OpenHistory"
+    }
+  },
+  {
+    "context": "Picker > Editor",
+    "bindings": {
+      "ctrl-h": null
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-h": null
+    }
+  },
+  {
+    "context": "(ProjectPanel && not_editing)",
+    "bindings": {
+      "c": "project_panel::CollapseSelectedEntry"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-w": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-w": "pane::CloseActiveItem"
+    }
+  }
+]
