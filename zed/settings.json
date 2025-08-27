@@ -7,7 +7,28 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "ssh_connections": [],
+  "ssh_connections": [
+    {
+      "host": "warehouse",
+      "port_forwards": [
+        {
+          "local_port": 3000,
+          "remote_port": 3000,
+          "local_host": "0.0.0.0"
+        },
+        {
+          "local_port": 8000,
+          "remote_port": 8000,
+          "local_host": "0.0.0.0"
+        },
+        {
+          "local_port": 9000,
+          "remote_port": 9000,
+          "local_host": "0.0.0.0"
+        }
+      ]
+    }
+  ],
   "agent": {
     "always_allow_tool_actions": true
   },
