@@ -263,5 +263,11 @@
     "bindings": {
       "ctrl-w": "pane::CloseActiveItem"
     }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-t": null
+    }
   }
 ]
