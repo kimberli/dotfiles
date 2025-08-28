@@ -133,18 +133,6 @@
     }
   },
   {
-    "context": "(VimControl && !menu)",
-    "bindings": {
-      "ctrl-d": "editor::GoToDefinitionSplit"
-    }
-  },
-  {
-    "context": "(VimControl && !menu)",
-    "bindings": {
-      "ctrl-y": "editor::GoToTypeDefinitionSplit"
-    }
-  },
-  {
     "context": "vim_mode == normal",
     "bindings": {
       "ctrl-r": null
@@ -196,12 +184,6 @@
     "context": "Editor",
     "bindings": {
       "ctrl-k": null
-    }
-  },
-  {
-    "context": "Picker > Editor",
-    "bindings": {
-      "d b": "editor::DeleteToPreviousWordStart"
     }
   },
   {
@@ -268,6 +250,216 @@
     "context": "Editor",
     "bindings": {
       "ctrl-t": null
+    }
+  },
+  {
+    "context": "(Editor && edit_prediction)",
+    "bindings": {
+      "tab": "editor::AcceptEditPrediction"
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "ctrl-d": "editor::GoToDefinition"
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "ctrl-y": "editor::GoToTypeDefinition"
+    }
+  },
+  {
+    "context": "AgentDiff",
+    "bindings": {
+      "ctrl-y": "agent::Keep"
+    }
+  },
+  {
+    "context": "(Editor && editor_agent_diff)",
+    "bindings": {
+      "ctrl-y": "agent::Keep"
+    }
+  },
+  {
+    "context": "AcpThread > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-y": "agent::KeepAll"
+    }
+  },
+  {
+    "context": "AcpThread > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-y": "agent::KeepAll"
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-y": "agent::KeepAll"
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-y": "agent::KeepAll"
+    }
+  },
+  {
+    "context": "(Editor && editor_agent_diff)",
+    "bindings": {
+      "ctrl-shift-y": "agent::KeepAll"
+    }
+  },
+  {
+    "context": "AgentDiff",
+    "bindings": {
+      "ctrl-shift-y": "agent::KeepAll"
+    }
+  },
+  {
+    "context": "(Editor && editor_agent_diff)",
+    "bindings": {
+      "cmd-y": null
+    }
+  },
+  {
+    "context": "AgentDiff",
+    "bindings": {
+      "cmd-y": null
+    }
+  },
+  {
+    "context": "AcpThread > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "cmd-shift-y": null
+    }
+  },
+  {
+    "context": "AcpThread > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "cmd-shift-y": null
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "cmd-shift-y": null
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "cmd-shift-y": null
+    }
+  },
+  {
+    "context": "(Editor && editor_agent_diff)",
+    "bindings": {
+      "cmd-shift-y": null
+    }
+  },
+  {
+    "context": "AgentDiff",
+    "bindings": {
+      "cmd-shift-y": null
+    }
+  },
+  {
+    "context": "(Editor && editor_agent_diff)",
+    "bindings": {
+      "ctrl-n": "agent::Reject"
+    }
+  },
+  {
+    "context": "AgentDiff",
+    "bindings": {
+      "ctrl-n": "agent::Reject"
+    }
+  },
+  {
+    "context": "AcpThread > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-n": "agent::RejectAll"
+    }
+  },
+  {
+    "context": "AcpThread > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-n": "agent::RejectAll"
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-n": "agent::RejectAll"
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "ctrl-shift-n": "agent::RejectAll"
+    }
+  },
+  {
+    "context": "(Editor && editor_agent_diff)",
+    "bindings": {
+      "ctrl-shift-n": "agent::RejectAll"
+    }
+  },
+  {
+    "context": "AgentDiff",
+    "bindings": {
+      "ctrl-shift-n": "agent::RejectAll"
+    }
+  },
+  {
+    "context": "(Editor && editor_agent_diff)",
+    "bindings": {
+      "cmd-n": null
+    }
+  },
+  {
+    "context": "AgentDiff",
+    "bindings": {
+      "cmd-n": null
+    }
+  },
+  {
+    "context": "AcpThread > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "cmd-shift-n": null
+    }
+  },
+  {
+    "context": "AcpThread > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "cmd-shift-n": null
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && use_modifier_to_send)",
+    "bindings": {
+      "cmd-shift-n": null
+    }
+  },
+  {
+    "context": "(MessageEditor && !Picker) > (Editor && !use_modifier_to_send)",
+    "bindings": {
+      "cmd-shift-n": null
+    }
+  },
+  {
+    "context": "(Editor && editor_agent_diff)",
+    "bindings": {
+      "cmd-shift-n": null
+    }
+  },
+  {
+    "context": "AgentDiff",
+    "bindings": {
+      "cmd-shift-n": null
     }
   }
 ]
