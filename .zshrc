@@ -64,8 +64,13 @@ else
 fi
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
 
-POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$'\uE0B1'
-POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$'\uE0B3'
+if [ $(locale charmap 2> /dev/null) = 'UTF-8' ]; then
+    POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$'\uE0B1'
+    POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$'\uE0B3'
+else
+    POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
+    POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
+fi
 
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_SHORTEN_DELIMITER=""
@@ -160,8 +165,6 @@ alias gpt='git push --tags'
 alias gpf='git push --force-with-lease'
 alias gu='git pull --rebase'
 alias gs='git status'
-alias gh='git stash'
-alias ghp='git stash pop'
 alias gcm='git commit -m'
 alias gk='git checkout'
 alias gr='git rebase'
@@ -174,6 +177,7 @@ alias grom='git rebase origin/master'
 alias tl='tmux ls'
 alias tc='tmux'
 alias ta='tmux attach -t'
+alias trs='tmux rename-session'
 
 alias dps='docker ps -a'
 alias dk='docker kill'
