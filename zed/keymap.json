@@ -21,10 +21,7 @@
   {
     "context": "Workspace || Editor",
     "bindings": {
-      "ctrl-p": [
-        "file_finder::Toggle",
-        {}
-      ]
+      "ctrl-p": ["file_finder::Toggle", {}]
     }
   },
   {
@@ -55,10 +52,7 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-s": [
-        "workspace::Save",
-        {}
-      ]
+      "ctrl-s": ["workspace::Save", {}]
     }
   },
   {
@@ -74,21 +68,15 @@
     }
   },
   {
-    "context": "(vim_mode == normal && !menu)",
-      "bindings": {
-      "e": [
-        "vim::NextSubwordEnd",
-        {}
-      ]
+    "context": "VimControl && !menu",
+    "bindings": {
+      "e": ["vim::NextSubwordEnd", {}]
     }
   },
   {
-    "context": "(vim_mode == normal && !menu)",
-      "bindings": {
-      "w": [
-        "vim::NextSubwordStart",
-        {}
-      ]
+    "context": "VimControl && !menu",
+    "bindings": {
+      "w": ["vim::NextSubwordStart", {}]
     }
   },
   {
@@ -460,6 +448,42 @@
     "context": "AgentDiff",
     "bindings": {
       "cmd-shift-n": null
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-e": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-e": "diagnostics::Deploy"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-m": null
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "shift-w": null
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "shift-e": null
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "b": "vim::PreviousSubwordStart"
     }
   }
 ]

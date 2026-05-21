@@ -19,7 +19,31 @@
     "diagnostics": false
   },
   "vim_mode": true,
-  "format_on_save": "language_server",
+  "soft_wrap": "editor_width",
+  "lsp": {
+    "eslint": {
+      "settings": {
+        "format": true,
+        "quiet": false,
+        "onIgnoredFiles": "off",
+        "workingDirectory": "auto",
+        "codeActionOnSave": {
+          "enable": true,
+          "mode": "all"
+        }
+      }
+    }
+  },
+  "project_panel": {
+    "show_diagnostics": "all"
+  },
+  "tabs": {
+    "show_diagnostics": "all"
+  },
+  "format_on_save": "on",
+  "code_actions_on_format": {
+    "source.fixAll.eslint": true
+  },
   "ui_font_size": 14,
   "buffer_font_size": 12,
   "theme": {
@@ -28,5 +52,5 @@
     "dark": "Everforest Dark Medium"
   },
   "buffer_font_family": "Roboto Mono for Powerline",
-  "relative_line_numbers": true
+  "relative_line_numbers": "enabled"
 }
