@@ -219,3 +219,12 @@ export PATH="/Users/kim/.codeium/windsurf/bin:$PATH"
 
 # npm global path
 export PATH="/Users/kim/.npm-global/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/kim/.antigravity/antigravity/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/kim/.antigravity/antigravity/bin:$PATH"
+
+# Added by Antigravity IDE
+export PATH="/Users/kim/.antigravity-ide/antigravity-ide/bin:$PATH"
