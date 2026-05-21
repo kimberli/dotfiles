@@ -168,5 +168,13 @@
         "key": "ctrl+w",
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus && terminal.active"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "workbench.action.files.save"
+    },
+    {
+        "key": "cmd+s",
+        "command": "-workbench.action.files.save"
     }
 ]
