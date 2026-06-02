@@ -965,17 +965,17 @@
     {
         "key": "/",
         "command": "actions.find",
-        "when": "editorTextFocus && !editorReadonly"
+        "when": "editorTextFocus && !editorReadonly && vim.mode == 'Normal'"
     },
     {
         "key": "n",
         "command": "editor.action.nextMatchFindAction",
-        "when": "editorTextFocus && findWidgetVisible"
+        "when": "editorTextFocus && findWidgetVisible && vim.mode == 'Normal'"
     },
     {
         "key": "shift+n",
         "command": "editor.action.previousMatchFindAction",
-        "when": "editorTextFocus && findWidgetVisible"
+        "when": "editorTextFocus && findWidgetVisible && vim.mode == 'Normal'"
     },
     {
         "key": "enter",
