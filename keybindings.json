@@ -951,5 +951,55 @@
         "key": "ctrl+k",
         "command": "workbench.action.terminal.focusPrevious",
         "when": "terminalTabsFocus || terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+/",
+        "command": "antigravity.toggleChatFocus",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "cmd+l",
+        "command": "-antigravity.toggleChatFocus",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "/",
+        "command": "actions.find",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "n",
+        "command": "editor.action.nextMatchFindAction",
+        "when": "editorTextFocus && findWidgetVisible"
+    },
+    {
+        "key": "shift+n",
+        "command": "editor.action.previousMatchFindAction",
+        "when": "editorTextFocus && findWidgetVisible"
+    },
+    {
+        "key": "enter",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "findInputFocussed"
+    },
+    {
+        "key": "Esc",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "findInputFocussed"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "findInputFocussed"
+    },
+    {
+        "key": "shift+8",
+        "command": "editor.action.nextSelectionMatchFindAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+3",
+        "command": "editor.action.previousSelectionMatchFindAction",
+        "when": "editorTextFocus && !editorReadonly"
     }
 ]
