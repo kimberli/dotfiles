@@ -991,15 +991,5 @@
         "key": "ctrl+c",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "findInputFocussed"
-    },
-    {
-        "key": "shift+8",
-        "command": "editor.action.nextSelectionMatchFindAction",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "shift+3",
-        "command": "editor.action.previousSelectionMatchFindAction",
-        "when": "editorTextFocus && !editorReadonly"
     }
 ]
