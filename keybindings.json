@@ -172,21 +172,6 @@
         "when": "textInputFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+\\",
-        "command": "workbench.action.terminal.split",
-        "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
-    },
-    {
-        "key": "ctrl+shift+5",
-        "command": "-workbench.action.terminal.split",
-        "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
-    },
-    {
-        "key": "cmd+\\",
-        "command": "-workbench.action.terminal.split",
-        "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
-    },
-    {
         "key": "ctrl+w",
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
@@ -991,5 +976,15 @@
         "key": "ctrl+c",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "findInputFocussed"
+    },
+    {
+        "key": "ctrl+\\",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "cmd+\\",
+        "command": "-workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
     }
 ]
