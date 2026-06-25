@@ -185,6 +185,9 @@ alias drm='docker rm -f'
 alias di='docker images'
 alias drmi='docker rmi'
 
+alias kc='kubectl'
+alias kcm='kubectl --context=microk8s'
+
 function cdr() {
   root=$(git rev-parse --show-toplevel 2>/dev/null)
   if [ -n "$root" ]; then
@@ -197,3 +200,8 @@ function cdr() {
 function error() {
   (>&2 echo -e "${RED}$*${NO_COLOR}")
 }
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$HOME/.local/bin:$PATH"
