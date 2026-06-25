@@ -17,3 +17,10 @@ mkdir -p ~/.config/nvim
 echo "setting up nvim"
 mv ~/.config/nvim/init.vim $oldfiles/ 2>/dev/null
 ln -sf ~/.vimrc ~/.config/nvim/init.vim
+
+# setup gh config
+mkdir -p ~/.config/gh
+echo "setting up gh config"
+mv ~/.config/gh/config.yml $oldfiles/ 2>/dev/null
+ln -sf $dir/ghconfig.yml ~/.config/gh/config.yml
+
