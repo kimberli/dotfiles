@@ -561,7 +561,7 @@
     {
         "key": "g d",
         "command": "editor.action.revealDefinition",
-        "when": "editorHasDefinitionProvider && editorTextFocus && neovim.mode != 'insert'"
+        "when": "editorHasDefinitionProvider && editorTextFocus && neovim.init && neovim.mode == 'normal'"
     },
     {
         "key": "f12",
@@ -569,9 +569,9 @@
         "when": "editorHasDefinitionProvider && editorTextFocus"
     },
     {
-        "key": "ctrl+r",
+        "key": "g r",
         "command": "editor.action.goToReferences",
-        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+        "when": "editorHasDefinitionProvider && editorTextFocus && neovim.init && neovim.mode == 'normal'"
     },
     {
         "key": "shift+f12",
@@ -648,7 +648,7 @@
     {
         "key": "g y",
         "command": "editor.action.goToTypeDefinition",
-        "when": "editorTextFocus && neovim.mode != 'insert'"
+        "when": "editorHasDefinitionProvider && editorTextFocus && neovim.init && neovim.mode == 'normal'"
     },
     {
         "key": "ctrl+l",
@@ -851,7 +851,7 @@
     {
         "key": "g g",
         "command": "editor.action.goToTopHover",
-        "when": "editorHoverFocused && neovim.mode != 'insert'"
+        "when": "editorHoverFocused && neovim.mode == 'normal'"
     },
     {
         "key": "g g",
